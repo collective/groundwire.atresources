@@ -1,0 +1,17 @@
+<script type="text/javascript"
+    tal:define="mimetype python:request.response.setHeader('Content-Type', 'text/javascript');"
+    tal:replace="structure string:
+(function() {
+  var title = document.title,
+    url = document.location.href,
+    meta = document.getElementsByTagName('meta');
+    for (var i in meta) {
+      if (meta[i].name === 'title') {
+        title = meta[i].content;
+      }
+    }
+    location.href = '${context/absolute_url}/@@prepopulate_resource?title=' + encodeURIComponent(title) + '&url=' + encodeURIComponent(url);
+})();
+
+">
+</script>

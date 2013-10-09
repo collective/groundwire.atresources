@@ -1,0 +1,11 @@
+<p tal:attributes="id view/player_id">
+    <strong>Download:</strong>
+    <a tal:attributes="href string:${context/absolute_url}/at_download/file;"
+        tal:content="context/Title"
+        href="">
+        Resource title
+    </a>
+</p>
+<script type="text/javascript"
+    tal:content="string:AudioPlayer.embed('${view/player_id}', ${view/player_options});">
+</script>

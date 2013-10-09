@@ -1,0 +1,5 @@
+<iframe tal:define="pprops context/@@plone_tools/properties;" 
+    tal:attributes="src string:${view/url_scheme}://www.youtube.com/embed/${view/movie_id};
+        height pprops/site_properties/resources_video_height|python:385;
+        width pprops/site_properties/resources_video_width|python:480;"
+    width="480" height="385" src="" frameborder="0" allowfullscreen></iframe>

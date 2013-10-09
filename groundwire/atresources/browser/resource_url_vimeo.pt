@@ -1,0 +1,5 @@
+<iframe tal:define="pprops context/@@plone_tools/properties;"
+    tal:attributes="src string:${view/url_scheme}://player.vimeo.com/video/${view/movie_id};
+        height pprops/site_properties/resources_video_height|python:270;
+        width pprops/site_properties/resources_video_width|python:400;"
+    src="" width="400" height="270" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

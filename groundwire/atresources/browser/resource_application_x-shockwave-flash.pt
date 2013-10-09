@@ -1,0 +1,8 @@
+<p tal:attributes="id view/player_id">
+    <strong>Download:</strong>
+    <a tal:attributes="href string:${context/absolute_url}/at_download/file;"
+        tal:content="context/Title"
+        href="">
+        Resource title
+    </a>
+</p>

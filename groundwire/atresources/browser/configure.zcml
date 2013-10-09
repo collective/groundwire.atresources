@@ -1,0 +1,211 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    i18n_domain="groundwire.atresources">
+
+  <include package="plone.app.contentmenu" />
+
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="atresource_view"
+      class=".atresource.ATResourceView"
+      template="atresource_view.pt"
+      menu="plone_displayviews"
+      title="Resource view"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+  
+  <adapter name="video"
+      factory=".mimetype.VideoMimeTypeProvider" />
+      
+  <adapter name="audio"
+      factory=".mimetype.AudioMimeTypeProvider" />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_image"
+      template="resource_image.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_application_pdf"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_application_msword"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_application_vnd.openxmlformats-officedocument.wordprocessingml.document"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_application_vnd.ms-excel"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_application_vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_application_vnd.ms-powerpoint"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_application_vnd.openxmlformats-officedocument.presentationml.presentation"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_application_illustrator"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_image_x-psd"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_image_x-photoshop"
+      template="resource_googledocs_file.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_application_x-shockwave-flash"
+      class=".resource_application_x-shockwave-flash.Flash"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_audio_mp3"
+      class=".resource_audio_mp3.MP3"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_audio_mpeg"
+      class=".resource_audio_mp3.MP3"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_default"
+      template="resource_default.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_url"
+      class=".resource_url.URL"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_url_mp3"
+      class=".resource_url_mp3.MP3URL"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_url_vimeo"
+      class=".resource_url_vimeo.VimeoURL"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="..interfaces.atresource.IATResource"
+      name="resource_url_youtube"
+      class=".resource_url_youtube.YouTubeURL"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="Products.CMFCore.interfaces.IFolderish"
+      name="prepopulate_resource"
+      class=".prepopulate.PrepopulateResource"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:page
+      for="Products.CMFCore.interfaces.IFolderish"
+      name="prepopulate_resource.js"
+      template="prepopulate.js.pt"
+      layer="..interfaces.IResourcesLayer"
+      permission="zope2.View"
+      />
+      
+  <browser:resource
+      name="audio_player.js"
+      file="audio_player.js"
+      layer="..interfaces.IResourcesLayer"
+      />
+      
+  <browser:resource
+      name="audio_player.swf"
+      file="audio_player.swf"
+      layer="..interfaces.IResourcesLayer"
+      />
+      
+  <browser:resource
+      name="swfobject.js"
+      file="swfobject.js"
+      layer="..interfaces.IResourcesLayer"
+      />
+
+</configure>

@@ -1,19 +1,19 @@
 <tal:resource tal:define="mimetype view/guess_mimetype;
         web_mimetypes view/web_mimetypes;">
-        
+
     <tal:googleviewer tal:define="pprops context/@@plone_tools/properties;
             disable_viewer pprops/site_properties/disable_googledocs_viewer|nothing;"
         tal:condition="not:disable_viewer">
         <iframe tal:condition="view/use_googledocs_viewer"
-            tal:attributes="src string:http://docs.google.com/viewer?url=${context/url}&amp;embedded=true"
+            tal:attributes="src string://docs.google.com/viewer?url=${context/url}&amp;embedded=true"
             src="" height="600" width="100%" style="border: none;"></iframe>
     </tal:googleviewer>
-    
+
     <p tal:condition="python:mimetype and not mimetype in web_mimetypes"
         class="url-link">
         <a tal:attributes="href context/url;"
             href="">
-            <img tal:define="icon view/icon_url;" 
+            <img tal:define="icon view/icon_url;"
                 tal:condition="icon" src="" alt=""
                  tal:attributes="src icon"/>
             <tal:title tal:replace="context/Title"/>
@@ -28,7 +28,7 @@
         <a tal:attributes="href context/url;"
             target="_blank"
             href="">
-            <img tal:define="icon string:${context/@@plone_portal_state/portal_url}/html.png;" 
+            <img tal:define="icon string:${context/@@plone_portal_state/portal_url}/html.png;"
                 src="" alt="" tal:attributes="src icon"/>
             <tal:title tal:replace="context/Title"/>
         </a>

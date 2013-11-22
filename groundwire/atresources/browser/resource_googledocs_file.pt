@@ -3,7 +3,7 @@
     tal:condition="not:disable_viewer">
     <iframe tal:define="view_roles python:[role['name'] for role in context.rolesOfPermission('View') if role['selected']];"
         tal:condition="python:'Anonymous' in view_roles"
-        tal:attributes="src string:http://docs.google.com/viewer?url=${context/absolute_url}/at_download/file&amp;embedded=true"
+        tal:attributes="src string://docs.google.com/viewer?url=${context/absolute_url}/at_download/file&amp;embedded=true"
         src="" height="600" width="100%" style="border: none;"></iframe>
 </tal:googleviewer>
 
